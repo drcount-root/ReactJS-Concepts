@@ -25,6 +25,9 @@ function App() {
   // const [count, setCount] = useState(countInitial());
 
   // Then the countInitial() function will run every time component renders & re-renders
+
+  // Fix of it in App-3.jsx
+
   //
   //
   //
