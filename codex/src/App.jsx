@@ -1,31 +1,32 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 
-function countInitial() {
-  console.log("run function every time component renders");
-  return 0; // initial value
-}
-
 function App() {
-  const [count, setCount] = useState(() => countInitial());
+  const [count, setCount] = useState(4);
+  const [theme, setTheme] = useState("blue");
+  const [even, setEven] = useState("Even");
 
-  // Now this time countInitial() function get called only the first time component renders
+  useEffect(() => {
+    if (count === 0) setEven("Neither Odd nor Even");
+    else if (count % 2 === 0) setEven("Even");
+    else setEven("Odd");
+  }, [count]);
 
-  //
-  //
-  //
-  //
-  //
+  const decrHandle = () => {
+    setCount((prevCount) => prevCount - 1);
+    setTheme("red");
+  };
 
-  // good way to update state, depending on previous value is to use callback inside setState function
-  const decrHandle = () => setCount((prevCount) => prevCount - 1);
-
-  const incrHandle = () => setCount((prevCount) => prevCount + 1);
+  const incrHandle = () => {
+    setCount((prevCount) => prevCount + 1);
+    setTheme("blue");
+  };
 
   return (
     <>
       <button onClick={decrHandle}>-</button>
       <span>{count}</span>
+      <span>{` ${theme} + ${even} `}</span>
       <button onClick={incrHandle}>+</button>
     </>
   );
