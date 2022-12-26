@@ -2,19 +2,34 @@ import React, { useState } from "react";
 import "./App.css";
 
 function App() {
+  // to keep track of list items
   const [lists, setLists] = useState([]);
-
+  // to keep track of user input in the input label
   const [text, setText] = React.useState("");
 
-  function handleChange(event) {
+  // fires on every time (every keypress) user input in the input label
+  const userInputChange = (event) => {
     setText(event.target.value);
-  }
-  const addNewEventHandler = () => {
+  };
+
+  // triggered on button submit
+  const addNewItemHandler = () => {
     setLists((prevList) => {
       return [...prevList, text];
     });
 
     setText("");
+  };
+
+  // triggered on 'enter' key press
+  const enterKeyPressaddNewItem = (event) => {
+    if (event.key === "Enter") {
+      setLists((prevList) => {
+        return [...prevList, text];
+      });
+
+      setText("");
+    }
   };
 
   return (
@@ -28,19 +43,11 @@ function App() {
 
       <input
         value={text}
-        onChange={handleChange}
-        onKeyPress={(e) => {
-          if (e.key === "Enter") {
-            setLists((prevList) => {
-              return [...prevList, text];
-            });
-
-            setText("");
-          }
-        }}
+        onChange={userInputChange}
+        onKeyPress={enterKeyPressaddNewItem}
       />
 
-      <button onClick={addNewEventHandler}>Add new</button>
+      <button onClick={addNewItemHandler}>Add new</button>
     </React.Fragment>
   );
 }
