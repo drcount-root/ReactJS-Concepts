@@ -1,23 +1,22 @@
 import React, { useState } from "react";
-import ClassContextComponent from "./ClassContextComponent";
-import FunctionContextComponent from "./FunctionContextComponent";
+import Child from "./Child";
 
-export const ThemeContext = React.createContext();
+import { createContext } from "react";
 
-export default function App() {
-  const [darkTheme, setDarkTheme] = useState(true);
+export const ThemeContext = createContext();
+// or
+// export const ThemeContext = React.createContext();
 
-  const toggleTheme = () => {
-    setDarkTheme((prevTheme) => !prevTheme);
-  };
+const App = () => {
+  const [theme, setTheme] = useState("blue");
 
   return (
-    <>
-      <ThemeContext.Provider value={darkTheme}>
-        <button onClick={toggleTheme}>Toggle Theme</button>
-        <FunctionContextComponent />
-        <ClassContextComponent />
+    <React.Fragment>
+      <ThemeContext.Provider value={{ theme, setTheme }}>
+        <Child />
       </ThemeContext.Provider>
-    </>
+    </React.Fragment>
   );
-}
+};
+
+export default App;
