@@ -41,7 +41,7 @@ export default Child;
 ```
 
 ```
-Class based (not completed). For class based components, we need to wrap the consumers inside <ThemeContext.Consumer></ThemeContext.Consumer>
+Class based GrandChild component(not completed). For class based components, we need to wrap the consumers inside <ThemeContext.Consumer></ThemeContext.Consumer>
 ```
 
 2. The second part is the consumer. This is what you must wrap your code in to access the value of the context. This component expects a function as the child of it and that function gives you the value of the context as the only argument for the function. Then in that function you can just return the JSX that utilizes the context.
