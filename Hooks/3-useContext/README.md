@@ -4,50 +4,44 @@ React uses state to store data and props to pass data between components. This w
 
 This is where the Context API comes in. With the context API you can specify certain pieces of data that will be available to all components nested inside the context with no need to pass this data through each component. It is essentially semi-global state that is available anywhere inside the context.
 
-
 ```
-const ThemeContext = React.createContext()
+import React, { useState } from "react";
+import Child from "./Child";
 
-function App() {
-  const [theme, setTheme] = useState('dark')
+export const ThemeContext = React.createContext();
+
+const App = () => {
+  const [darkTheme, setDarkTheme] = useState(false);
 
   return (
-    <ThemeContext.Provider value={{ theme, setTheme }}>
-      <ChildComponent />
-    </ThemeContext.Provider>
-  )
-}
+    <React.Fragment>
+      <ThemeContext.Provider value={{ darkTheme, setDarkTheme }}>
+        <Child />
+      </ThemeContext.Provider>
+    </React.Fragment>
+  );
+};
+
+export default App;
 ```
 
 In the above code we are creating a new context using `React.createContext`. This gives us a variable that has two parts-
 
-1. The first part is the provider which provides a value to all components nested inside of it. In our case the value is a single object with the `theme` and `setTheme` properties.
+1. The first part is the provider which provides a value to all components nested inside of it. In our case the value is a single object with the `darkTheme` and `setDarkTheme` properties.
 
 ```
-function ChildComponent() {
-  return <GrandChildComponent />
-}
+import React from "react";
+import GrandChild from "./GrandChild";
+
+const Child = () => {
+  return <GrandChild />;
+};
+
+export default Child;
 ```
 
 ```
-class GrandChildComponent {
-  render() {
-    return (
-      <ThemeContext.Consumer>
-        {({ theme, setTheme }) => {
-          return (
-            <>
-              <div>The theme is {theme}</div>
-              <button onClick={() => setTheme('light')}>
-                Change To Light Theme
-              </button>
-            </>
-          )
-        }}
-      </ThemeContext.Consumer>
-    )
-  }
-}
+Class based (not completed). For class based components, we need to wrap the consumers inside <ThemeContext.Consumer></ThemeContext.Consumer>
 ```
 
 2. The second part is the consumer. This is what you must wrap your code in to access the value of the context. This component expects a function as the child of it and that function gives you the value of the context as the only argument for the function. Then in that function you can just return the JSX that utilizes the context.
@@ -59,18 +53,35 @@ This second part of the context is what makes context hard to work with. Having 
 In order to use context in a function component you no longer need to wrap your JSX in a consumer. Instead all you need to do is pass your context to the `useContext` hook and it will do all the magic for you. Here is an example.
 
 ```
-function GrandChildComponent() {
-  const { theme, setTheme } = useContext(ThemeContext)
+import React, { useContext } from "react";
+import { ThemeContext } from "./App";
+
+const GrandChild = () => {
+  const { darkTheme, setDarkTheme } = useContext(ThemeContext);
+
+  const theme = {
+    color: darkTheme ? "white" : "black",
+    backgroundColor: darkTheme ? "black" : "white",
+  };
+
+  const toggleTheme = () => {
+    setDarkTheme((prevTheme) => !prevTheme);
+  };
 
   return (
-    <>
-      <div>The theme is {theme}</div>
-      <button onClick={() => setTheme('light')}>
-        Change To Light Theme
-      </button>
-    </>
-  )
-}
+    <React.Fragment>
+      <div style={theme}>
+        <h2>Dark Theme Toggler</h2>
+        <p>This is a paragraph,</p>
+      </div>
+      <button onClick={toggleTheme}>{`${
+        darkTheme ? "Disable" : "Enable"
+      } Dark Theme`}</button>
+    </React.Fragment>
+  );
+};
+
+export default GrandChild;
 ```
 
 With the help of `useContext` we were able to cut out all the consumer portion of the context and remove all the complex nesting. Now context works just like a normal function where you call the context and it will give you the values inside of it for you to use later in the code. This drastically simplifies code related to context and makes working with context so much more enjoyable.
