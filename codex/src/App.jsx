@@ -1,7 +1,11 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState, useReducer } from "react";
 
 export default function App() {
+  const [] = useReducer(reducer);
+  // useReducer() takes two different parameters
+  // - 1. a reducer, which is a function that we perform on our state to get a new state
+  // - 2. initial state value
+
   const [count, setCount] = useState(0);
 
   const decrement = () => {
