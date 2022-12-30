@@ -10,9 +10,9 @@ Similar to useState, useReducer takes an initial state as one of its arguments a
 
 The only major difference is that we also need to pass a reducer function to useReducer which contains all the logic for modifying our state.
 
-| useState()                                                                                              | useReducer()                                                                                 |
-| ------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| Updates state with `setState()`                                                                         | Updates state with `dispatch` function                                                       |
-| Passes down all the setState custom helper functions addItem, setItemCompleted, toggleAllItemsCompleted | Passes down just the `dispatch` function                                                     |
-| Needs to wrap functions in `useCallback()` (if we want to memoize them)                                 | `dispatch` function is already memoized                                                      |
-| Harder to test but easier to write                                                                      | Easier to test but harder to write; one can just test the `reducer` function that is exposed |
+| useState()                                                                                                              | useReducer()                                                                                 |
+| ----------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| Updates state with `setState()`                                                                                         | Updates state with `dispatch` function                                                       |
+| Passes down all the `setState()` custom helper functions `addItem()`, `setItemCompleted()`, `toggleAllItemsCompleted()` | Passes down just the `dispatch` function                                                     |
+| Needs to wrap functions in `useCallback()` (if we want to memoize them)                                                 | `dispatch` function is already memoized                                                      |
+| Harder to test but easier to write                                                                                      | Easier to test but harder to write; one can just test the `reducer` function that is exposed |
