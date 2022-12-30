@@ -1,57 +1,26 @@
-// import React, { useState, useRef, useEffect } from "react";
-
-// export default function App() {
-//   const [name, setName] = useState("");
-
-//   const prevName = useRef("");
-
-//   // Another great usecase of useRef() hook is to store the previous value of any state
-
-//   useEffect(() => {
-//     prevName.current = name;
-//   }, [name]);
-
-//   const onInputChange = (event) => {
-//     setName(event.target.value);
-//   };
-
-//   return (
-//     <React.Fragment>
-//       <input onChange={onInputChange} />
-//       <div>
-//         My name is <strong>{name}</strong>(current) and it used to be{" "}
-//         <strong>{prevName.current}</strong>(previous)
-//       </div>
-//     </React.Fragment>
-//   );
-// }
-
 import React from "react";
-import { useEffect, useState } from "react";
-import { useRef } from "react";
+import { useState } from "react";
 
-const App = () => {
-  const [name, setName] = useState("");
+export default function App() {
+  const [count, setCount] = useState(0);
 
-  const prevName = useRef('');
+  const decrement = () => {
+    setCount((prevCount) => prevCount - 1);
+  };
 
-  useEffect(() => {
-    prevName.current = name;
-  }, [name]);
+  const increment = () => {
+    setCount((prevCount) => prevCount + 1);
+  };
 
   return (
     <React.Fragment>
-      <input
-        onChange={(event) => {
-          setName(event.target.value);
-        }}
-      />
-      <p>
-        My name is <strong>{name}</strong> and used to be{" "}
-        <strong>{prevName.current}</strong>
-      </p>
+      <div>
+        <button onClick={decrement}>-</button>
+
+        <span>{count}</span>
+
+        <button onClick={increment}>+</button>
+      </div>
     </React.Fragment>
   );
-};
-
-export default App;
+}
