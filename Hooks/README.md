@@ -7,7 +7,7 @@
 >
 > Hooks don’t work inside classes — they let you use React features without classes.
 
-Till React v17 Hooks are **backward-compatible**, meaning they have no breaking changes (very minor breaking points)
+> Till React v17 Hooks are **backward-compatible**, meaning they have no breaking changes (very minor breaking points)
 
 > React v16.8 is a rewrite, but it has the same public API.
 >
