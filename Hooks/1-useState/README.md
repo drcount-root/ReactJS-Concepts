@@ -30,7 +30,11 @@ const [number, setNumber] = useState(() => {
 
 <hr>
 
-### setState() method of useState() is asynchronous
+### setState() method of useState() is asynchronous or synchronous
+
+The **setState of a class-based component is asynchronous** because it batches updates together and applies them as a single update. This is done to improve performance and avoid race conditions.
+
+On the other hand, the **setState() returned by the useState hook is 100% synchronous but behaves like asynchronous**. This means that when you call setCount, the state value isn't updated immediately. Happens like what happens in class bases components. Because, react checks all the requested updates & completes the updates and then render them at once.
 
 `useState()` is an asynchronous hook, it will wait for the component to finish its cycle, re-render, and then it will update the state.
 
