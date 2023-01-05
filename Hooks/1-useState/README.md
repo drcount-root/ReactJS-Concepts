@@ -1,3 +1,7 @@
+# useState() hook
+
+### A React hook that we use to adds state to functional components. It is an alternative to writing a class-based component with a state object and lifecycle methods.
+
 ### setState() method of useState() is asynchronous
 
 `useState()` is an asynchronous hook, it will wait for the component to finish its cycle, re-render, and then it will update the state.
