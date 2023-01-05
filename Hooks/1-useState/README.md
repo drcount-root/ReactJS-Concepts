@@ -13,7 +13,7 @@ const [count, setCount] = useState(0);
 
 const [database, setDatabase] = useState({ name: 'Subham', age: 25, designation: 'Full Stack SDE' });
 
-// 3.
+// 3. Callback function as initial value
 
 const [number, setNumber] = useState(() => {
     console.log("run function only first time component renders");
