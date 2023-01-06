@@ -1,4 +1,4 @@
-# setState() method of useState() is asynchronous or synchronous
+# setState() method of useState() is asynchronous or synchronous (conflicted question)
 
 The **setState of a class-based component is asynchronous** because it batches updates together and applies them as a single update. This is done to improve performance and avoid race conditions. Otherwise rendering multiple times could be expensive.
 
