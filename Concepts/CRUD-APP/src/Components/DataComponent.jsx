@@ -9,10 +9,17 @@ export default function DataComponent() {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
-        console.log(data.results[0]);
-        
+        const userObj = data.results[0];
+        setUserData({
+          name:
+            userObj.name.title +
+            " " +
+            userObj.name.first +
+            " " +
+            userObj.name.last,
+        });
       });
   }, []);
 
-  return <div>DataComponent</div>;
+  return <div>{userdata.name}</div>;
 }
