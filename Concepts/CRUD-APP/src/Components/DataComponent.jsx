@@ -17,9 +17,23 @@ export default function DataComponent() {
             userObj.name.first +
             " " +
             userObj.name.last,
+          dob: userObj.dob.date,
+          email: userObj.email,
         });
       });
   }, []);
 
-  return <div>{userdata.name}</div>;
+  return (
+    <React.Fragment>
+      <div>
+        <strong>Name:</strong> {userdata.name}
+      </div>
+      <div>
+        <strong>DOB:</strong> {userdata.dob}
+      </div>
+      <div>
+        <strong>Email:</strong> {userdata.email}
+      </div>
+    </React.Fragment>
+  );
 }
