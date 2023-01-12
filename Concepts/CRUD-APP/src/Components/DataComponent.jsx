@@ -7,7 +7,7 @@ export default function DataComponent() {
     fetch("https://randomuser.me/api/")
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         const userObj = data.results[0];
         setUserData({
           name:
@@ -19,7 +19,8 @@ export default function DataComponent() {
           dob: userObj.dob.date,
           email: userObj.email,
         });
-      });
+      })
+      .catch((error) => console.log('Error Message: ' + error.message));
   }, []);
 
   return (
