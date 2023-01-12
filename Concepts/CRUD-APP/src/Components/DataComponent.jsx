@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import ListUsers from "./ListUsers";
 
 export default function DataComponent() {
   const [userdata, setUserData] = useState({ name: "", email: "", dob: "" });
@@ -20,20 +21,12 @@ export default function DataComponent() {
           email: userObj.email,
         });
       })
-      .catch((error) => console.log('Error Message: ' + error.message));
+      .catch((error) => console.log("Error Message: " + error.message));
   }, []);
 
   return (
     <React.Fragment>
-      <div>
-        <strong>Name:</strong> {userdata.name}
-      </div>
-      <div>
-        <strong>DOB:</strong> {userdata.dob}
-      </div>
-      <div>
-        <strong>Email:</strong> {userdata.email}
-      </div>
+      <ListUsers info={userdata} />
     </React.Fragment>
   );
 }
