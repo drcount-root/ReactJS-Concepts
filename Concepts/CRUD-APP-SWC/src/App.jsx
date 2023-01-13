@@ -11,24 +11,51 @@
 
 // export default App;
 
-import React, { useState, useEffect } from 'react';
+import React from "react";
+import { useState } from "react";
+import { useEffect } from "react";
 
-export default function App() {
-  const [count, setCount] = useState(0);
+const App = () => {
+  const [usersData, setUsersData] = useState([]);
 
-  // Similar to componentDidMount and componentDidUpdate:
   useEffect(() => {
-    // Update the document title using the browser API
-    document.title = `You clicked ${count} times`;
-    console.log('oh man!')
-  },[]);
+    const fetchData = async () => {
+      const response = await fetch("https://randomuser.me/api/?results=5");
+      const data = await response.json();
+      // console.log(data);
+      const userArr = data.results;
+      console.log(userArr);
+      setUsersData(userArr);
+    };
+    fetchData().catch((error) => console.log(error.message));
+  }, []);
 
   return (
-    <div>
-      <p>You clicked {count} times</p>
-      <button onClick={() => setCount(count + 1)}>
-        Click me
-      </button>
-    </div>
+    <React.Fragment>
+      <div>
+        {usersData.map((user) => {
+          return (
+            <div
+              key={user.email}
+              style={{
+                display: "flex",
+                border: "1px solid",
+                padding: '10px',
+                margin: '10px'
+              }}
+            >
+              <span>
+                Name:{" "}
+                {user.name.title + " " + user.name.first + " " + user.name.last}
+              </span>
+              <span>DOB: {user.dob.date}</span>
+              <span>Email: {user.email}</span>
+            </div>
+          );
+        })}
+      </div>
+    </React.Fragment>
   );
-}
+};
+
+export default App;
