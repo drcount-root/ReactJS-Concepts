@@ -8,6 +8,11 @@ If we remove the `<React.StrictMode></React.StrictMode>` tags then it will log o
 
 `React.StrictMode` is enabled in development mode so that - it's easy to find bugs & different errors in our code that react thinks it should changed.
 
+<br>
+
+## To fix this:
+
+Resources: https://www.youtube.com/watch?v=81faZzp18NM & https://beta.reactjs.org/learn/synchronizing-with-effects#how-to-handle-the-effect-firing-twice-in-development
 
 <br>
 

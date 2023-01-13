@@ -12,22 +12,30 @@
 // export default App;
 
 import React from "react";
+import { useRef } from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 
 const App = () => {
   const [usersData, setUsersData] = useState([]);
+  const effectRan = useRef(false);
 
   useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch("https://randomuser.me/api/?results=5");
-      const data = await response.json();
-      // console.log(data);
-      const userArr = data.results;
-      console.log(userArr);
-      setUsersData(userArr);
+    if (effectRan.current === false) {
+      const fetchData = async () => {
+        const response = await fetch("https://randomuser.me/api/?results=5");
+        const data = await response.json();
+        // console.log(data);
+        const userArr = await data.results;
+        console.log(userArr);
+        setUsersData(userArr);
+      };
+      fetchData().catch((error) => console.log(error.message));
+    }
+    return () => {
+      console.log("unmounted");
+      effectRan.current = true;
     };
-    fetchData().catch((error) => console.log(error.message));
   }, []);
 
   return (
@@ -40,8 +48,8 @@ const App = () => {
               style={{
                 display: "flex",
                 border: "1px solid",
-                padding: '10px',
-                margin: '10px'
+                padding: "10px",
+                margin: "10px",
               }}
             >
               <span>
