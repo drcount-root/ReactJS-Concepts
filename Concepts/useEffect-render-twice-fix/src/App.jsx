@@ -21,6 +21,7 @@ const App = () => {
   const effectRan = useRef(false);
 
   useEffect(() => {
+    // if (effectRan.current === true || process.env.NODE_ENV !== 'development')
     if (effectRan.current === false) {
       const fetchData = async () => {
         const response = await fetch("https://randomuser.me/api/?results=5");
