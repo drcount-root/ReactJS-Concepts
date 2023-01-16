@@ -4,19 +4,19 @@ Using `useState()` hook, is not the only the way to update state in react.
 
 `useReducer()` hook also allows to `manage state & re-render` component whenever that state changes.
 
-The idea behind `useReducer()` is - it gives you a more concrete way to handle complex state, so it gives you set actions that you can perform on your state and it's going to convert your current state to a new version of the state based on the action that you send it.
+The idea behind `useReducer()` is - it gives you a more concrete way to handle complex state.
 
-Similar to useState, useReducer takes an initial state as one of its arguments and returns the current state and a way to update that state.
+Similar to useState, useReducer takes an initial state as one of its arguments and returns the current state and a way to update that state. useReducer also re-renders a component when the state changes just like useState. The only major difference is that we also need to pass a reducer function to useReducer which contains all the logic for modifying our state.
 
 `Redux` is great for managing complex state transitions and sharing state globally, but with the introduction of the `Context API` and the `useReducer` hook Redux is no longer necessary for handling complex shared state.
 
-###
+##
 
 ```
 const [count, dispatch] = useReducer(reducer, 0)
 ```
 
-In the above code the default state of 0 is passed as the second argument to useReducer and the `count` is returned as the first element in the array just like with useState. Now instead of having a setCount function we have a `dispatch` function which allows us to call the `reducer` function we pass to `useReducer()`.
+In the above code the default/initial state of 0 is passed as the second argument to useReducer and the `count` is returned as the first element in the array just like with useState. Now instead of having a setCount function we have a `dispatch` function which allows us to call the `reducer` function that we pass to `useReducer()`.
 
 OR
 
@@ -28,23 +28,30 @@ const [state, dispatch] = useReducer(reducer, { count: 0 })
 ```
 
 ```
-function reducer(count, action) {
-  switch (action.type) {
-    case 'increment':
-      return count + 1
-    default:
-      return count
-  }
-}
+// reducer() function
 
-const [count, dispatch] = useReducer(reducer, 0);
+const reducer = (state, action) => {
+  switch (action.type) {
+    case ACTIONS.INCREMENT:
+      return { count: state.count + 1 };
+    case ACTIONS.DECREMENT:
+      return { count: state.count - 1 };
+    default:
+      return state;
+  }
+};
+
+const [state, dispatch] = useReducer(reducer, { count: 0 });
 ```
 
-We now have defined the reducer function and it takes two parameters. The first parameter is the current state of our component. The second parameter is our action which is going to be set to whatever you pass to dispatch.
+```
+const reducer = (currentState, action) => { ... }
+```
+The reducer function takes two parameters. The first parameter is the current state of our component. The second parameter is our action which is going to be set to whatever you pass to dispatch.
 
-### useState() vs useReducer()
+<br>
 
-The only major difference is that we also need to pass a reducer function to useReducer which contains all the logic for modifying our state.
+## useState() vs useReducer()
 
 | useState()                                                                                                              | useReducer()                                                                                 |
 | ----------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
