@@ -2,14 +2,15 @@
 
 Redux is a pattern and library for managing and updating application state, using events called "actions". It serves as a centralized store for state that needs to be used across your entire application, with rules ensuring that the state can only be updated in a predictable fashion.
 
+# Principles Of Redux
 
-# Three Principles Of Redux
+1. The global state of your application is stored as ab object inside a single store.
 
-1. The global state of your application is stored in an object tree within a single store.
+2. The only way to change the state is to dispatch an action, an object describing what happened.
 
-2. The only way to change the state is to emit an action, an object describing what happened.
+3. Immutability, One-way data flow, Predictability of outcome
 
-3. To specify how the state tree is transformed by actions, you write pure reducers.
+4. Changes are made with pure reducer functions depending upon actions.
 
 <br>
 
