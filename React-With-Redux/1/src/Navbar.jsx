@@ -1,7 +1,9 @@
 import React from "react";
+import {useSelector} from 'react-redux';
 
 export default function Navbar() {
-  return (
+  const state = useSelector(state => state.amount);
+    return (
     <>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">

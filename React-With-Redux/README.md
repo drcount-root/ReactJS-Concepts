@@ -1,3 +1,8 @@
+# What is Redux?
+
+Redux is a pattern and library for managing and updating application state, using events called "actions". It serves as a centralized store for state that needs to be used across your entire application, with rules ensuring that the state can only be updated in a predictable fashion.
+
+
 # Three Principles Of Redux
 
 1. The global state of your application is stored in an object tree within a single store.
