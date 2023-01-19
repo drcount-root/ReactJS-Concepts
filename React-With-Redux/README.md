@@ -32,6 +32,12 @@ In summary, Redux's strict unidirectional data flow, pure reducer functions, and
 
 <br>
 
+# What does it mean by unidirectional data flow in redux?
+
+In Redux, unidirectional data flow refers to the way in which data flows through the application in a predictable and centralized manner. The basic idea is that the entire application state is stored in a single, immutable "store" object. Components cannot directly modify the store, but instead can dispatch actions that describe a desired state change. These actions are then processed by "reducers," which update the store in a predictable way. The updated store is then passed down to the components as props, allowing them to re-render and reflect the new state. This approach makes it easy to understand how the state of the application changes over time, and to debug any issues that may arise.
+
+<br>
+
 # Is reducer function of redux a pure function?
 
 Yes, the reducer function in Redux is a pure function.
