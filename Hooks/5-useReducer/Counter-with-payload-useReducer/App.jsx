@@ -19,7 +19,7 @@ const reducer = (state, action) => {
     case ACTION.CHANGE:
       return { count: state.count + action.payload.value };
     default:
-      return count;
+      return state;
   }
 };
 
