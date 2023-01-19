@@ -1,73 +1,29 @@
 import React from "react";
 import "./App.css";
-import { useReducer } from "react";
 
 function App() {
   return (
-    <div className="App">
-      <Counter />
-    </div>
+    <React.Fragment>
+      <div style={{ display: "flex", flexDirection: "column", backgroundColor:'whitesmoke', padding: '32px', borderRadius: '10px'}}>
+        <h2 style={{color: '#1a1a1a'}}>React Counter App with Redux</h2>
+        <div
+          style={{
+            display: "flex",
+            gap: "10px",
+            justifyContent: "center",
+            alignItems: "center",
+            backgroundColor:'gray',
+            padding: '15px',
+            borderRadius: '10px'
+          }}
+        >
+          <button>-</button>
+          <span style={{fontSize: '24px', backgroundColor: '#1a1a1a', padding: '15px', borderRadius: '8px'}}>0</span>
+          <button>+</button>
+        </div>
+      </div>
+    </React.Fragment>
   );
 }
 
 export default App;
-
-const ACTIONS = {
-  add: "add",
-  sub: "sub",
-  mul: "mul",
-  div: "div",
-};
-
-const reducer = (state, action) => {
-  switch (action.type) {
-    case ACTIONS.add:
-      return { count: state.count + action.payload.val };
-    case ACTIONS.sub:
-      return { count: state.count - action.payload.val };
-    case ACTIONS.mul:
-      return { count: state.count * action.payload.val };
-    case ACTIONS.div:
-      return { count: state.count / action.payload.val };
-    default:
-      return state;
-  }
-};
-
-const Counter = () => {
-  const [state, dispatch] = useReducer(reducer, { count: 0 });
-
-  return (
-    <React.Fragment>
-      <button
-        onClick={() => {
-          dispatch({ type: "div", payload: { val: 2 } });
-        }}
-      >
-        /
-      </button>
-      <button
-        onClick={() => {
-          dispatch({ type: "sub", payload: { val: 2 } });
-        }}
-      >
-        -
-      </button>
-      <span>{state.count}</span>
-      <button
-        onClick={() => {
-          dispatch({ type: "add", payload: { val: 2 } });
-        }}
-      >
-        +
-      </button>
-      <button
-        onClick={() => {
-          dispatch({ type: "mul", payload: { val: 2 } });
-        }}
-      >
-        *
-      </button>
-    </React.Fragment>
-  );
-};
