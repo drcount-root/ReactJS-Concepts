@@ -1,3 +1,13 @@
+# Three Principles Of Redux
+
+1. The global state of your application is stored in an object tree within a single store.
+
+2. The only way to change the state is to emit an action, an object describing what happened.
+
+3. To specify how the state tree is transformed by actions, you write pure reducers.
+
+<br>
+
 # state is Read-only in redux
 
 In Redux, the state is considered to be `read-only`, which means that the state can only be modified by dispatching actions that are processed by pure reducer functions. These reducer functions take the current state and an action as arguments and return a new state. The new state is then passed on to the components, which re-render based on the new state.
@@ -44,6 +54,8 @@ In the context of Redux, the reducer function is a pure function which should be
 
 In summary, both immutable function and pure function are closely related, and an immutable function is a type of pure function that creates and returns a new object or data structure rather than modifying the original. Pure functions, on the other hand, are functions that given the same input, will always produce the same output, and have no side effects.
 
+<br>
+
 # INTV Qs:
 
 Here are some common interview questions that may be asked about Redux during a job interview:
@@ -68,3 +80,9 @@ Here are some common interview questions that may be asked about Redux during a 
 18. How does Redux handle large data sets?
 19. How do you handle real-time updates in a Redux application?
 20. How do you handle security and sensitive data in a Redux application?
+
+<br>
+
+# installing redux to react project
+
+`$ npm i redux react-redux`
