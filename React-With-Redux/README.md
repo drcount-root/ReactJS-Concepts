@@ -83,6 +83,12 @@ Here are some common interview questions that may be asked about Redux during a 
 
 <br>
 
-# installing redux to react project
+# installing & setup redux to react project
 
-`$ npm i redux react-redux`
+1. `$ npm i redux react-redux redux-thunk`
+
+2. setting up state folder inside src
+
+3. create 2 folders inside state folder - 1. action-creators, 2. reducers
+
+4.
