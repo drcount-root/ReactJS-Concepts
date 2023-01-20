@@ -141,3 +141,17 @@ whenever we return something from action, it must have type key. That same type 
 holds the raw data, that we want to store inside the store. We can't modify/process data inside reducer.
 
 <hr>
+
+### How to call actions?
+
+1. We have to import useDispatch hook from 'react-redux'
+
+2. then can set dispatch = useDispatch()
+
+3. now we have to call dispatch() & pass action as argument & if we need to pass data to action that also can be done like this -
+
+```
+<button onClick={ () => dispatch(action_name(data)) }>
+   Click Here
+</button>
+```
