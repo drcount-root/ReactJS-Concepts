@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { incNumber, decNumber } from "./actions/index";
 
 function App() {
-  const myState = useSelector((state) => state.changeTheNumber);
+  const changeTheNumber = useSelector((state) => state.changeTheNumber);
   const dispatch = useDispatch();
 
   return (
@@ -43,7 +43,7 @@ function App() {
               borderRadius: "8px",
             }}
           >
-            {myState}
+            {changeTheNumber}
           </span>
           <button onClick={() => dispatch(incNumber())}>+</button>
         </div>
