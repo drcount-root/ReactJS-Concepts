@@ -173,3 +173,11 @@ const product = {
 ### What does action do?
 
 Pass data from react component to reducer
+
+### Reducer rules:
+
+>1. Should have at least one root reducer
+>2. reducer must return some value
+>3. The reducer must have some initial value
+
+Page refreshing deletes all data of redux
