@@ -101,10 +101,8 @@ Here are some common interview questions that may be asked about Redux during a 
 
 # installing & setup redux to react project
 
-1. `$ npm i redux react-redux redux-thunk`
+1. `$ npm i redux react-redux redux-saga`
 
-2. setting up state folder inside src
+   `react-redux` package is used to integrate `Redux` with `React` components.
 
-3. create 2 folders inside state folder - 1. action-creators, 2. reducers
-
-4.
+   `redux-saga` package is used for handling asynchronous operations.
