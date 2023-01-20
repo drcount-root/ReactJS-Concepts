@@ -4,7 +4,7 @@ Redux is a pattern and library for managing and updating application state, usin
 
 # Principles Of Redux
 
-1. The global state of your application is stored as ab object inside a single store.
+1. The global state of your application is stored as an object inside a single store.
 
 2. The only way to change the state is to dispatch an action, an object describing what happened.
 
@@ -101,10 +101,35 @@ Here are some common interview questions that may be asked about Redux during a 
 
 # installing & setup redux to react project
 
-1. `$ npm i redux react-redux redux-saga`
-    >
+`$ npm i redux react-redux redux-saga`
+>
     >`react-redux` package is used to integrate `Redux` with `React` components.
     >If you are using Redux with any kind of UI   framework, you will normally use a "UI binding" library to tie Redux together with your UI framework, rather than directly interacting with the store from your UI code.
     >React Redux is the official Redux UI binding library for React. If you are using Redux and React together, you should also use React Redux to bind these two libraries.
     >
     >`redux-saga` package is used for handling asynchronous operations.
+
+
+<br>
+
+# Insight
+
+**Provider** - we wrap our <App /> component with the Provider & pass the store as store prop, so that it can use the store. It connects the react component with redux.
+
+<hr>
+
+**store** - As per redux principles, the global state of our application is stored as an object inside a single store.
+
+input of store - reducer
+output of store - data or function
+
+<hr>
+
+**action** - plain functions used to send data from react to redux. We can also modify/process data as per need inside actions. The data inside action passed to reducer function & reducer keep that data inside store.
+
+whenever we return something from action, it must have type key. That same type key must be used in reducer.
+
+<hr>
+
+**reducer** - holds the raw data, that we want to store inside the store. We can't modify/process data inside reducer.
+
