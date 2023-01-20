@@ -38,6 +38,10 @@ In Redux, unidirectional data flow refers to the way in which data flows through
 
 <br>
 
+# Actions must be plain objects.
+
+<br>
+
 # Is reducer function of redux a pure function?
 
 Yes, the reducer function in Redux is a pure function.
