@@ -151,7 +151,21 @@ holds the raw data, that we want to store inside the store. We can't modify/proc
 3. now we have to call dispatch() & pass action as argument & if we need to pass data to action that also can be done like this -
 
 ```
-<button onClick={ () => dispatch(action_name(data)) }>
+...
+import addToCart_action from "./redux/action";
+import { useDispatch } from "react-redux";
+...
+const dispatch = useDispatch()
+
+const product = {
+    name: "iPhone",
+    type: "mobile",
+    price: 79000,
+    color: "white",
+  };
+...
+...
+<button onClick={ () => dispatch(addToCart_action(product)) }>
    Click Here
 </button>
 ```
