@@ -102,7 +102,9 @@ Here are some common interview questions that may be asked about Redux during a 
 # installing & setup redux to react project
 
 1. `$ npm i redux react-redux redux-saga`
-
- >  `react-redux` package is used to integrate `Redux` with >  `React` components.
- >
- >  `redux-saga` package is used for handling asynchronous operations.
+    >
+    >`react-redux` package is used to integrate `Redux` with `React` components.
+    >If you are using Redux with any kind of UI   framework, you will normally use a "UI binding" library to tie Redux together with your UI framework, rather than directly interacting with the store from your UI code.
+    >React Redux is the official Redux UI binding library for React. If you are using Redux and React together, you should also use React Redux to bind these two libraries.
+    >
+    >`redux-saga` package is used for handling asynchronous operations.
