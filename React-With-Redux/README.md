@@ -103,6 +103,6 @@ Here are some common interview questions that may be asked about Redux during a 
 
 1. `$ npm i redux react-redux redux-saga`
 
-   `react-redux` package is used to integrate `Redux` with `React` components.
-
-   `redux-saga` package is used for handling asynchronous operations.
+ >  `react-redux` package is used to integrate `Redux` with >  `React` components.
+ >
+ >  `redux-saga` package is used for handling asynchronous operations.
