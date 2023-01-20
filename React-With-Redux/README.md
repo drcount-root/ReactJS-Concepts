@@ -169,3 +169,7 @@ const product = {
    Click Here
 </button>
 ```
+
+### What does action do?
+
+Pass data from react component to reducer
