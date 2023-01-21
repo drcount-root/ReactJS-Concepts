@@ -7,11 +7,12 @@ export const cartDataReducer = (data = [], action) => {
       return [action.data, ...data];
     case REMOVE_FROM_CART:
       console.log("REMOVE_FROM_CART", action);
-      data.length = data.length - 1;
+      data.length && (data.length = data.length - 1);
       return [...data];
     case EMPTY_CART:
       console.log("EMPTY_CART", action);
-      return;
+      data = [];
+      return [...data];
     default:
       return data;
   }

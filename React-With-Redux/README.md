@@ -107,7 +107,7 @@ Here are some common interview questions that may be asked about Redux during a 
 > If you are using Redux with any kind of UI framework, you will normally use a "UI binding" library to tie Redux together with your UI framework, rather than directly interacting with the store from your UI code.
 > react-redux is the official Redux UI binding library for React. If you are using Redux and React together, you should also use React Redux to bind these two libraries.
 >
-> `redux-saga` package is used for handling asynchronous operations.
+> `redux-saga` package is used for handling asynchronous operations. Redux-Saga is a middleware library used to allow a Redux store to asynchronously interact with resources outside of itself. Redux-Saga helps in: making HTTP requests (API requests), accessing browser storage.
 
 <br>
 
