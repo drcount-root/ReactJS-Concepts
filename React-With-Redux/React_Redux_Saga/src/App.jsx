@@ -1,18 +1,19 @@
 import "./App.css";
 import Header from "./components/Header";
+import Main from "./components/Main";
 
-import { addToCart, removeFromCart } from "./redux/action";
-import { useDispatch } from "react-redux";
+// import { addToCart, removeFromCart } from "./redux/action";
+// import { useDispatch } from "react-redux";
 
 function App() {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  const product = {
-    name: "iPhone",
-    type: "mobile",
-    price: 79000,
-    color: "white",
-  };
+  // const product = {
+  //   name: "iPhone",
+  //   type: "mobile",
+  //   price: 79000,
+  //   color: "white",
+  // };
 
   return (
     <div
@@ -27,10 +28,11 @@ function App() {
       }}
     >
       <Header/>
-      <button onClick={() => dispatch(addToCart(product))}>Add To Cart</button>
+      {/* <button onClick={() => dispatch(addToCart(product))}>Add To Cart</button>
       <button onClick={() => dispatch(removeFromCart(product))}>
         Remove From Cart
-      </button>
+      </button> */}
+      <Main/>
     </div>
   );
 }
