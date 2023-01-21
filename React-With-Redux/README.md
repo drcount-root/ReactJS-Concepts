@@ -105,7 +105,7 @@ Here are some common interview questions that may be asked about Redux during a 
 
 > `react-redux` package is used to integrate `Redux` with `React` components.
 > If you are using Redux with any kind of UI framework, you will normally use a "UI binding" library to tie Redux together with your UI framework, rather than directly interacting with the store from your UI code.
-> React Redux is the official Redux UI binding library for React. If you are using Redux and React together, you should also use React Redux to bind these two libraries.
+> react-redux is the official Redux UI binding library for React. If you are using Redux and React together, you should also use React Redux to bind these two libraries.
 >
 > `redux-saga` package is used for handling asynchronous operations.
 
@@ -181,3 +181,8 @@ Pass data from react component to reducer
 >3. The reducer must have some initial value
 
 Page refreshing deletes all data of redux
+
+
+### How do we pass data from redux to react components?
+
+using useSelector() hook provided by redux

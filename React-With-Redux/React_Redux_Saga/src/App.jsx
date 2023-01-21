@@ -1,4 +1,5 @@
 import "./App.css";
+import Header from "./components/Header";
 
 import { addToCart, removeFromCart } from "./redux/action";
 import { useDispatch } from "react-redux";
@@ -25,6 +26,7 @@ function App() {
         borderRadius: "8px",
       }}
     >
+      <Header/>
       <button onClick={() => dispatch(addToCart(product))}>Add To Cart</button>
       <button onClick={() => dispatch(removeFromCart(product))}>
         Remove From Cart
