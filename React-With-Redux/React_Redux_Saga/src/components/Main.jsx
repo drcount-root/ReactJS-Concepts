@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 function Main() {
   const dispatch = useDispatch();
   const data = useSelector((state) => state.productDataReducer);
-  console.log("data in main component", data);
+  console.log("data in main component from saga", data);
 
   const product = {
     id: "2y53W",

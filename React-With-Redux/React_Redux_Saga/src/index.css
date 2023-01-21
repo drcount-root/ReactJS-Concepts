@@ -47,10 +47,13 @@ button {
   background-color: #41414159;
   cursor: pointer;
   transition: border-color 0.25s;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.293);
 }
+
 button:hover {
   border-color: #f4f4f4;
 }
+
 button:focus,
 button:focus-visible {
   outline: 1px auto -webkit-focus-ring-color;
