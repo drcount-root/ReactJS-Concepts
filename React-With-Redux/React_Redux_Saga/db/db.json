@@ -1,0 +1,40 @@
+{
+  "product": [
+    {
+      "id": 1,
+      "name": "Samsung Galaxy S20 Ultra",
+      "color": "black",
+      "price": 92999,
+      "category": "Mobile",
+      "brand": "Samsung",
+      "image": "https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80"
+    },
+    {
+      "id": 2,
+      "name": "Nike Air Shoes",
+      "color": "White & Multicolor",
+      "price": 47999,
+      "category": "Shoe",
+      "brand": "Nike",
+      "image": "https://cdn.lorem.space/images/shoes/.cache/640x480/irene-kredenets-dwKiHoqqxk8-unsplash.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Apple Watch",
+      "color": "White",
+      "price": 84999,
+      "category": "Watch",
+      "brand": "Apple",
+      "image": "https://cdn.lorem.space/images/watch/.cache/640x480/vlad-b-4e-RI494Jx0-unsplash.jpg"
+    },
+    {
+      "id": 4,
+      "name": "StoolX",
+      "color": "Wooden Gold",
+      "price": 12999,
+      "category": "Furniture",
+      "brand": "OkeWoodCrafts",
+      "image": "https://cdn.lorem.space/images/furniture/.cache/640x480/cesar-couto-OB2F6CsMva8-unsplash.jpg"
+    }
+  ]
+}
