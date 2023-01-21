@@ -5,6 +5,7 @@ function Main() {
   const dispatch = useDispatch();
 
   const product = {
+    id: "2y53W",
     name: "iPhone",
     type: "mobile",
     price: 79000,
@@ -20,8 +21,11 @@ function Main() {
       }}
     >
       <button onClick={() => dispatch(addToCart(product))}>Add To Cart</button>
-      <button onClick={() => dispatch(removeFromCart(product))}>
+      <button onClick={() => dispatch(removeFromCart(product.id))}>
         Remove From Cart
+      </button>
+      <button onClick={() => dispatch(removeFromCart(product))}>
+        Empty Cart
       </button>
     </div>
   );

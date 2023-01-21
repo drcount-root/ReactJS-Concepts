@@ -1,7 +1,7 @@
-import { ADD_TO_CART, REMOVE_FROM_CART } from "./constant";
+import { ADD_TO_CART, REMOVE_FROM_CART, EMPTY_CART } from "./constant";
 
 const addToCart = (data) => {
-  console.log("add action called", data);
+  console.log("add to cart action called", data);
   return {
     type: ADD_TO_CART,
     data: data,
@@ -9,11 +9,18 @@ const addToCart = (data) => {
 };
 
 const removeFromCart = (data) => {
-  console.log("remove action called", data);
+  console.log("remove from cart action called", data);
   return {
     type: REMOVE_FROM_CART,
     data: data,
   };
 };
 
-export { addToCart, removeFromCart };
+const emptyCart = () => {
+  console.log("empty cart action called");
+  return {
+    type: EMPTY_CART,
+  };
+};
+
+export { addToCart, removeFromCart, emptyCart };
