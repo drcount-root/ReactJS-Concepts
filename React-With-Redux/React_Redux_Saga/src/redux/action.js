@@ -1,11 +1,19 @@
-import {ADD_TO_CART} from './constant';
+import { ADD_TO_CART, REMOVE_FROM_CART } from "./constant";
 
 const addToCart = (data) => {
-  console.log("action called", data);
+  console.log("add action called", data);
   return {
     type: ADD_TO_CART,
     data: data,
   };
 };
 
-export default addToCart;
+const removeFromCart = (data) => {
+  console.log("remove action called", data);
+  return {
+    type: REMOVE_FROM_CART,
+    data: data,
+  };
+};
+
+export { addToCart, removeFromCart };
