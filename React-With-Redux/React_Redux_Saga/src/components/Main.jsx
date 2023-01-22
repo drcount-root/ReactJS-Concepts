@@ -34,12 +34,12 @@ function Main() {
           gap: "9px",
         }}
       >
-        <button onClick={() => dispatch(addToCart(product))}>
+        {/* <button onClick={() => dispatch(addToCart(product))}>
           Add To Cart
         </button>
         <button onClick={() => dispatch(removeFromCart(product.id))}>
           Remove From Cart
-        </button>
+        </button> */}
         <button onClick={() => dispatch(emptyCart())}>Empty Cart</button>
         {/* <button onClick={() => dispatch(productList())}>
           Get Product List
@@ -56,8 +56,12 @@ function Main() {
               <div>Price: {item.price}</div>
               <div>Category: {item.category}</div>
               <div>
-                <button>Add To Cart</button>
-                <button>Remove From Cart</button>
+                <button onClick={() => dispatch(addToCart(item))}>
+                  Add To Cart
+                </button>
+                <button onClick={() => dispatch(removeFromCart(item.id))}>
+                  Remove From Cart
+                </button>
               </div>
             </div>
           );
