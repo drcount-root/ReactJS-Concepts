@@ -18,20 +18,35 @@ function Main() {
   };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        gap: "9px",
-      }}
-    >
-      <button onClick={() => dispatch(addToCart(product))}>Add To Cart</button>
-      <button onClick={() => dispatch(removeFromCart(product.id))}>
-        Remove From Cart
-      </button>
-      <button onClick={() => dispatch(emptyCart())}>Empty Cart</button>
-      <button onClick={() => dispatch(productList())}>Get Product List</button>
-    </div>
+    <React.Fragment>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "9px",
+        }}
+      >
+        <button onClick={() => dispatch(addToCart(product))}>
+          Add To Cart
+        </button>
+        <button onClick={() => dispatch(removeFromCart(product.id))}>
+          Remove From Cart
+        </button>
+        <button onClick={() => dispatch(emptyCart())}>Empty Cart</button>
+        <button onClick={() => dispatch(productList())}>
+          Get Product List
+        </button>
+      </div>
+      <div className="product-container">
+        {data.map((item) => {
+          return (
+            <div className="product-item">
+              <img src={item.image} />
+            </div>
+          );
+        })}
+      </div>
+    </React.Fragment>
   );
 }
 
