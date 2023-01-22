@@ -1,3 +1,5 @@
+import React from "react";
+
 import { addToCart, emptyCart, removeFromCart } from "../redux/action";
 import { useDispatch } from "react-redux";
 import { productList } from "../redux/productAction";
@@ -40,8 +42,8 @@ function Main() {
       <div className="product-container">
         {data.map((item) => {
           return (
-            <div className="product-item">
-              <img src={item.image} />
+            <div className="product-item" key={item.id}>
+              <img src={item.image} alt="image" />
             </div>
           );
         })}
