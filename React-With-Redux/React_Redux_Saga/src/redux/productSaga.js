@@ -16,7 +16,10 @@ function* getProducts() {
 // generator function must have yield
 function* productSaga() {
   yield takeEvery(PRODUCT_LIST, getProducts);
-  //   yield takeEvery(ADD_TO_CART, testCart);
+  // param1- call on which action
+  // param2- the function which will be called on the action (param1)
+
+  // yield takeEvery(ADD_TO_CART, testCart);
 }
 
 export default productSaga;
