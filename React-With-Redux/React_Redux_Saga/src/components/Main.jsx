@@ -1,4 +1,5 @@
 import React from "react";
+import '../App.css';
 
 import { addToCart, emptyCart, removeFromCart } from "../redux/action";
 import { useDispatch } from "react-redux";
@@ -43,12 +44,16 @@ function Main() {
         {data.map((item) => {
           return (
             <div className="product-item" key={item.id}>
-              <img src={item.image} alt="image" />
+              <img className="product-image" src={item.image} alt="image" />
               <div>Name: {item.name}</div>
               <div>Color: {item.color}</div>
               <div>Brand: {item.brand}</div>
               <div>Price: {item.price}</div>
               <div>Category: {item.category}</div>
+              <div>
+                <button>Add To Cart</button>
+                <button>Remove From Cart</button>
+              </div>
             </div>
           );
         })}
