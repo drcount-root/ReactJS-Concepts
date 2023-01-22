@@ -44,6 +44,11 @@ function Main() {
           return (
             <div className="product-item" key={item.id}>
               <img src={item.image} alt="image" />
+              <div>Name: {item.name}</div>
+              <div>Color: {item.color}</div>
+              <div>Brand: {item.brand}</div>
+              <div>Price: {item.price}</div>
+              <div>Category: {item.category}</div>
             </div>
           );
         })}
