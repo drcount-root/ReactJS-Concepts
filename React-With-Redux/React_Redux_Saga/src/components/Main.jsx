@@ -41,9 +41,9 @@ function Main() {
           Remove From Cart
         </button>
         <button onClick={() => dispatch(emptyCart())}>Empty Cart</button>
-        <button onClick={() => dispatch(productList())}>
+        {/* <button onClick={() => dispatch(productList())}>
           Get Product List
-        </button>
+        </button> */}
       </div>
       <div className="product-container">
         {data.map((item) => {
