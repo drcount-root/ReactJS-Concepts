@@ -13,13 +13,13 @@ function Main() {
   const data = useSelector((state) => state.productDataReducer);
   console.log("data in main component from saga", data);
 
-  const product = {
-    id: "2y53W",
-    name: "iPhone",
-    type: "mobile",
-    price: 79000,
-    color: "white",
-  };
+  // const product = {
+  //   id: "2y53W",
+  //   name: "iPhone",
+  //   type: "mobile",
+  //   price: 79000,
+  //   color: "white",
+  // };
 
   useEffect(() => {
     dispatch(productList());
