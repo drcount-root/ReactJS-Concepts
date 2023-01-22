@@ -79,9 +79,10 @@
 
 .product-container {
   display: flex;
-  flex-direction: row;
-  /* flex-wrap: wrap; */
+  flex-direction: column;
   gap: 12px;
+  justify-content: center;
+  align-items: center;
 }
 
 .product-item {
@@ -92,8 +93,12 @@
   justify-content: center;
   align-items: center;
   width: 40%;
+  color: black;
+  padding-bottom: 8px;
 }
 
 .product-image {
   width: 100%;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
