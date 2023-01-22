@@ -1,11 +1,12 @@
 import React from "react";
-import '../App.css';
+import "../App.css";
 
 import { addToCart, emptyCart, removeFromCart } from "../redux/action";
 import { useDispatch } from "react-redux";
 import { productList } from "../redux/productAction";
 
 import { useSelector } from "react-redux";
+import { useEffect } from "react";
 
 function Main() {
   const dispatch = useDispatch();
@@ -19,6 +20,10 @@ function Main() {
     price: 79000,
     color: "white",
   };
+
+  useEffect(() => {
+    dispatch(productList());
+  }, []);
 
   return (
     <React.Fragment>
