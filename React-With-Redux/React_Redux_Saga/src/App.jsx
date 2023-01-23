@@ -1,6 +1,9 @@
 import "./App.css";
+import Cart from "./components/Cart";
 import Header from "./components/Header";
 import Main from "./components/Main";
+
+import { Routes, Route } from "react-router-dom";
 
 // import { addToCart, removeFromCart } from "./redux/action";
 // import { useDispatch } from "react-redux";
@@ -27,12 +30,15 @@ function App() {
         borderRadius: "8px",
       }}
     >
-      <Header/>
+      <Header />
       {/* <button onClick={() => dispatch(addToCart(product))}>Add To Cart</button>
       <button onClick={() => dispatch(removeFromCart(product))}>
         Remove From Cart
       </button> */}
-      <Main/>
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/cart" element={<Cart />} />
+      </Routes>
     </div>
   );
 }
