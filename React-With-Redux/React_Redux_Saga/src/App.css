@@ -100,12 +100,12 @@
   height: 430px;
 }
 
-.product-item button{
+.product-item button {
   color: black;
   margin-bottom: 5px;
 }
 
-.product-item button:hover{
+.product-item button:hover {
   outline: 2px solid white;
 }
 
@@ -114,4 +114,12 @@
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   margin-bottom: 8px;
+}
+
+th,
+td {
+  font-size: 14px;
+  line-height: 1;
+  border: 1px solid black;
+  padding: 6px 2px;
 }
