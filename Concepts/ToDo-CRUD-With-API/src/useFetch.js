@@ -1,6 +1,6 @@
 import fs from "fs";
 
-const useFetcher = async (n) => {
+const useFetch = async (n) => {
   const response = await fetch(`https://randomuser.me/api/?results=${n}`);
   const data = await response.json();
   const result = JSON.stringify(data);
@@ -13,6 +13,6 @@ const useFetcher = async (n) => {
   });
 };
 
-export default useFetcher;
+export default useFetch;
 
-console.log(useFetcher(9))
+console.log(useFetch(9));
