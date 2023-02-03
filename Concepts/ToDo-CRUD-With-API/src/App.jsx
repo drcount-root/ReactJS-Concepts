@@ -1,19 +1,20 @@
 import React, { useState, useEffect } from "react";
 
 function App() {
-
-  const [log, setLog] = useState('');
+  const [log, setLog] = useState({});
 
   let r = false;
 
   useEffect(() => {
-    const fetcher = async () => {
-      const response = await fetch("http://localhost:3000/results");
-      const data = response.data();
-      console.log(data);
-    };
-
     if (!r) {
+      const fetcher = async () => {
+        const response = await fetch("http://localhost:3000/db");
+        const data = await response.json();
+        setLog(data.results[0]);
+        console.log(data);
+        console.log(data.results[0]);
+      };
+
       fetcher().catch((err) => err.message);
     }
 
@@ -25,6 +26,7 @@ function App() {
   return (
     <React.Fragment>
       <h1>App</h1>
+      <div>{log}</div>
     </React.Fragment>
   );
 }
