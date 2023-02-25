@@ -1,7 +1,12 @@
 import { useEffect, useState } from "react";
+import Places from "./components/Places";
+import Hotels from "./components/Hotels";
 
 function App() {
   const [apidata, setApidata] = useState([]);
+  const [categories, setCategories] = useState([]);
+  const [places, setPlaces] = useState([]);
+  const [hotels, setHotels] = useState([]);
 
   let rendered = false;
 
@@ -13,8 +18,14 @@ function App() {
         );
         const data = await response.json();
 
-        console.log(data);
         setApidata(data);
+        console.log(data);
+        setCategories(data[0].categories);
+        console.log(data[0].categories);
+        setPlaces(data[0].categories.places);
+        console.log(data[0].categories.places);
+        setHotels(data[0].categories.hotels);
+        console.log(data[0].categories.hotels);
       };
 
       datafetch();
@@ -44,6 +55,7 @@ function App() {
 
                 <div>
                   <h3>Categories:</h3>
+
                   <div>
                     <h3>Places:</h3>
                     {apid.categories.places.length &&
@@ -59,6 +71,7 @@ function App() {
                         );
                       })}
                   </div>
+
                   <div>
                     <h3>Restaurants:</h3>
                     {apid.categories.restaurants.length &&
@@ -72,6 +85,7 @@ function App() {
                         );
                       })}
                   </div>
+
                   <div>
                     <h3>Hotels:</h3>
                     {apid.categories.hotels.length &&
@@ -85,6 +99,7 @@ function App() {
                         );
                       })}
                   </div>
+
                   <div>
                     <h3>Offices:</h3>
                     {apid.categories.offices.length &&
@@ -104,6 +119,11 @@ function App() {
           })}
         </div>
       </div>
+
+      <hr />
+
+      <Places places={places} />
+      <Hotels hotels={hotels} />
     </>
   );
 }
