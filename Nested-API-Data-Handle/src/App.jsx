@@ -139,3 +139,13 @@ function App() {
 }
 
 export default App;
+
+/*
+
+const obj = [{id: 1, name: 'New Delhi'}, {id: 2, name: 'Mumbai'}, {id: 3, name: 'Goa'}];
+
+const n = Object.entries(obj);
+
+console.log(n);
+
+*/
