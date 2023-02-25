@@ -45,7 +45,7 @@ function App() {
                 <div>
                   <h3>Categories:</h3>
                   <div>
-                    Places:{" "}
+                    <h3>Places:</h3>
                     {apid.categories.places.length &&
                       apid.categories.places.map((place, index) => {
                         return (
@@ -60,7 +60,7 @@ function App() {
                       })}
                   </div>
                   <div>
-                    Restaurants:{" "}
+                    <h3>Restaurants:</h3>
                     {apid.categories.restaurants.length &&
                       apid.categories.restaurants.map((restaurant, index) => {
                         return (
@@ -73,13 +73,26 @@ function App() {
                       })}
                   </div>
                   <div>
-                    Hotels:{" "}
+                    <h3>Hotels:</h3>
                     {apid.categories.hotels.length &&
                       apid.categories.hotels.map((hotel, index) => {
                         return (
                           <div key={index}>
                             <h4>
                               Id:{hotel.id} Name:{hotel.name}
+                            </h4>
+                          </div>
+                        );
+                      })}
+                  </div>
+                  <div>
+                    <h3>Offices:</h3>
+                    {apid.categories.offices.length &&
+                      apid.categories.offices.map((office, index) => {
+                        return (
+                          <div key={index}>
+                            <h4>
+                              Id:{office.id} Name:{office.name}
                             </h4>
                           </div>
                         );
