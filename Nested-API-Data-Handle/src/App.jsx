@@ -1,12 +1,16 @@
 import { useEffect, useState } from "react";
-import Places from "./components/Places";
-import Hotels from "./components/Hotels";
+// import Places from "./components/Places";
+// import Hotels from "./components/Hotels";
+// import Restaurants from "./components/Restaurants";
+// import Offices from "./components/Offices";
 
 function App() {
   const [apidata, setApidata] = useState([]);
-  const [categories, setCategories] = useState([]);
-  const [places, setPlaces] = useState([]);
-  const [hotels, setHotels] = useState([]);
+  // const [categories, setCategories] = useState([]);
+  // const [places, setPlaces] = useState([]);
+  // const [hotels, setHotels] = useState([]);
+  // const [restaurants, setRestaurants] = useState([]);
+  // const [offices, setOffices] = useState([]);
 
   let rendered = false;
 
@@ -20,12 +24,16 @@ function App() {
 
         setApidata(data);
         console.log(data);
-        setCategories(data[0].categories);
-        console.log(data[0].categories);
-        setPlaces(data[0].categories.places);
-        console.log(data[0].categories.places);
-        setHotels(data[0].categories.hotels);
-        console.log(data[0].categories.hotels);
+        // setCategories(data[0].categories);
+        // console.log(data[0].categories);
+        // setPlaces(data[0].categories.places);
+        // console.log(data[0].categories.places);
+        // setHotels(data[0].categories.hotels);
+        // console.log(data[0].categories.hotels);
+        // setRestaurants(data[0].categories.restaurants);
+        // console.log(data[0].categories.restaurants);
+        // setOffices(data[0].categories.offices);
+        // console.log(data[0].categories.offices);
       };
 
       datafetch();
@@ -42,24 +50,24 @@ function App() {
       <div>
         <h2>API Data</h2>
         <div>
-          {apidata.map((apid, index) => {
+          {apidata.map((item, index) => {
             return (
               <div key={index}>
-                <h2>Id:{apid.id}</h2>
-                <h2>Name:{apid.name}</h2>
+                <h2>Id:{item.id}</h2>
+                <h2>Name:{item.name}</h2>
                 <div>
-                  Weather:{apid.weather.temp} {apid.weather.main}{" "}
-                  <img src={`${apid.weather.icon}`} />
+                  Weather:{item.weather.temp} {item.weather.main}{" "}
+                  <img src={`${item.weather.icon}`} />
                 </div>
-                <img src={`${apid.backgroundUrl}`} />
+                <img src={`${item.backgroundUrl}`} />
 
                 <div>
                   <h3>Categories:</h3>
 
                   <div>
                     <h3>Places:</h3>
-                    {apid.categories.places.length &&
-                      apid.categories.places.map((place, index) => {
+                    {item.categories.places.length &&
+                      item.categories.places.map((place, index) => {
                         return (
                           <div key={index}>
                             <h4>
@@ -74,8 +82,8 @@ function App() {
 
                   <div>
                     <h3>Restaurants:</h3>
-                    {apid.categories.restaurants.length &&
-                      apid.categories.restaurants.map((restaurant, index) => {
+                    {item.categories.restaurants.length &&
+                      item.categories.restaurants.map((restaurant, index) => {
                         return (
                           <div key={index}>
                             <h4>
@@ -88,8 +96,8 @@ function App() {
 
                   <div>
                     <h3>Hotels:</h3>
-                    {apid.categories.hotels.length &&
-                      apid.categories.hotels.map((hotel, index) => {
+                    {item.categories.hotels.length &&
+                      item.categories.hotels.map((hotel, index) => {
                         return (
                           <div key={index}>
                             <h4>
@@ -102,8 +110,8 @@ function App() {
 
                   <div>
                     <h3>Offices:</h3>
-                    {apid.categories.offices.length &&
-                      apid.categories.offices.map((office, index) => {
+                    {item.categories.offices.length &&
+                      item.categories.offices.map((office, index) => {
                         return (
                           <div key={index}>
                             <h4>
@@ -122,8 +130,10 @@ function App() {
 
       <hr />
 
-      <Places places={places} />
+      {/* <Places places={places} />
       <Hotels hotels={hotels} />
+      <Restaurants restaurants={restaurants} />
+      <Offices offices={offices} /> */}
     </>
   );
 }
